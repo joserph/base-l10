@@ -45,9 +45,9 @@
 </head>
 <body>
     <div class="main-wrapper">
-        @include('layouts.sidebar')
+        @include('layouts.admin.sidebar')
         <div class="page-wrapper">
-            @include('layouts.navbar')
+            @include('layouts.admin.navbar')
 
             <div class="page-content">
 
@@ -467,7 +467,7 @@
                 </div> <!-- row -->
         
                     </div>
-            @include('layouts.footer')
+            @include('layouts.admin.footer')
         </div>
     </div>
 
