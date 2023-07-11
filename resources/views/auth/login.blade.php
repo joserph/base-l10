@@ -1,5 +1,4 @@
-
-@extends('layouts.admin.app')
+@extends('layouts.admin.auth')
 
 @section('content')
 <div class="main-wrapper">
@@ -56,7 +55,10 @@
                                                 </a>
                                             @endif
                                         </div>
-                                        <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a>
+                                        {{-- <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a> --}}
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}" class="d-block mt-3 text-muted">Not a user? Sign up</a>
+                                        @endif
                                     </form>
                                 </div>
                             </div>

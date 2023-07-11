@@ -44,7 +44,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @include('layouts.admin.admin')
+    @yield('content')
 
 	<script src="{{ asset('../assets/vendors/core/core.js')}}"></script>
 	<!-- endinject -->
