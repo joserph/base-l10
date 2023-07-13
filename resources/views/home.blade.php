@@ -1,10 +1,16 @@
 @extends('layouts.admin.app')
-
+@section('title') Dashboard @stop
 @section('content')
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
             <h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
         </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-dot">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+        </nav>
         {{-- <div class="d-flex align-items-center flex-wrap text-nowrap">
             <div class="input-group flatpickr wd-200 me-2 mb-2 mb-md-0" id="dashboardDate">
             <span class="input-group-text input-group-addon bg-transparent border-primary" data-toggle><i data-feather="calendar" class="text-primary"></i></span>
