@@ -27,6 +27,12 @@ class SeederTablePermissions extends Seeder
             'show-blog',
             'edit-blog',
             'delete-blog',
+            // Users
+            'view-user',
+            'create-user',
+            'show-user',
+            'edit-user',
+            'delete-user',
         ];
         foreach($permissions as $permission)
         {

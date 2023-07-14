@@ -10,7 +10,7 @@ class BlogController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:view-blog | create-blog | show-blog | edit-blog | delete-blog', ['only' => ['index']]);
+        $this->middleware('permission:view-blog', ['only' => ['index']]);
         $this->middleware('permission:create-blog', ['only' => ['create', 'store']]);
         $this->middleware('permission:show-blog', ['only' => ['show']]);
         $this->middleware('permission:edit-blog', ['only' => ['edit', 'update']]);
@@ -23,7 +23,7 @@ class BlogController extends Controller
     {
         $blogs = Blog::paginate(5);
 
-        return view('admin.blog.index', compact('blogs'));
+        return view('admin.blogs.index', compact('blogs'));
     }
 
     /**
@@ -41,7 +41,7 @@ class BlogController extends Controller
     {
         Blog::create($request->all());
 
-        return redirect()->route('admin.blogs.index');
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -67,7 +67,7 @@ class BlogController extends Controller
     {
         $blog->update($request->all());
 
-        return redirect()->route('admin.blogs.index');
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -78,6 +78,6 @@ class BlogController extends Controller
         $blog = Blog::find($id);
         $blog->delete();
 
-        return redirect()->route('admin.blogs.index');
+        return redirect()->route('blogs.index');
     }
 }

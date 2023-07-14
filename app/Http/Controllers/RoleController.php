@@ -13,7 +13,7 @@ class RoleController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:view-rol | create-rol | show-rol | edit-rol | delete-rol', ['only' => ['index']]);
+        $this->middleware('permission:view-rol', ['only' => ['index']]);
         $this->middleware('permission:create-rol', ['only' => ['create', 'store']]);
         $this->middleware('permission:show-rol', ['only' => ['show']]);
         $this->middleware('permission:edit-rol', ['only' => ['edit', 'update']]);
@@ -25,7 +25,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::paginate(5);
-        dd('Hola');
+        //dd('Hola');
         return view('admin.roles.index', compact('roles'));
     }
 
@@ -49,7 +49,7 @@ class RoleController extends Controller
         ]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -84,7 +84,7 @@ class RoleController extends Controller
         $role->save();
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -95,6 +95,6 @@ class RoleController extends Controller
         $role = Role::find($id);
         $role->delete();
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('roles.index');
     }
 }
