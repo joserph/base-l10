@@ -36,7 +36,7 @@
                             <tbody>
                                 @foreach ($roles as $item)
                                 <tr>
-                                    <td>{{ $item->name }}</td>
+                                    <td class="text-center">{{ $item->name }}</td>
                                     <td class="text-center">
                                         @can('edit-rol')
                                         <a href="{{ route('roles.edit', $item->id) }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="btn btn-icon btn-outline-warning btn-xs">
