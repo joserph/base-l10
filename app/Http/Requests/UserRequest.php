@@ -28,14 +28,14 @@ class UserRequest extends FormRequest
             return [
                 'name'      => 'required',
                 'email'     => 'required|email|unique:users,email,' . $user['user'],
-                'password'  => 'same:confirm-password',
+                'password'  => 'same:password_confirmation',
                 'roles'     => 'required'
             ];
         }else{
             return [
                 'name'      => 'required',
                 'email'     => 'required|email|unique:users,email',
-                'password'  => 'required|same:confirm-password',
+                'password'  => 'required|same:password_confirmation',
                 'roles'     => 'required'
             ];
         }

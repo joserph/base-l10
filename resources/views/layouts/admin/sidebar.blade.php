@@ -24,12 +24,14 @@
                     <span class="link-title">Users</span>
                 </a>
             </li>
+            @can('rol-index')
             <li class="nav-item">
                 <a href="{{ route('roles.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="unlock"></i>
                     <span class="link-title">Roles</span>
                 </a>
             </li>
+            @endcan
             <li class="nav-item">
                 <a href="{{ route('blogs.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="bold"></i>
